@@ -9,7 +9,9 @@ Welcome to confguru's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+
+   backends
 
 
 
