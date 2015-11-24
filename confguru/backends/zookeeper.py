@@ -4,7 +4,6 @@ import json
 import yaml
 import logging
 import six
-import pdb
 
 
 class ZKClient(BaseConf):
@@ -311,6 +310,23 @@ class ZKClient(BaseConf):
 
         :param dump_json_file: json file path
         :param starting_root: the start root path
+        :param ensure_ascii:
+            If `ensure_ascii` is True, all non-ASCII characters in the output are
+            escaped with \uXXXX sequences, and the result is a str instance
+            consisting of ASCII characters only.
+
+            If `ensure_ascii` is False, some chunks written to `dump_json_file`
+            may be unicode instances. This usually happens because the input
+            contains unicode strings or the encoding parameter is used.
+        :param indent:
+            If `indent` is a non-negative integer, then JSON array elements
+            and object members will be pretty-printed with that indent level.
+
+            An indent level of 0, or negative, will only insert newlines.
+            None (the default) selects the most compact representation.
+        :param separators: the item separator
+        :param encoding: the character encoding for str instances
+        :param sort_keys: whether to sort the output of dictionaries by key.
 
         For other parameters, please refer to `json.dump`
 

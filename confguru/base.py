@@ -1,4 +1,5 @@
 import abc
+import exceptions
 
 
 class BaseConf(object):
@@ -50,3 +51,20 @@ class BaseConf(object):
     @abc.abstractmethod
     def update(self, *args, **kwargs):
         pass
+
+    @classmethod
+    def validate_path(cls, path):
+        """Strip and trailing slash to validate a path
+
+        :param path: the path
+        :return: the valid path
+        :rtype: string
+        """
+
+        if path is None:
+            return None
+
+        path = path.strip()
+        while path.endswith('/'):
+            path = path[:-1]
+        return path
