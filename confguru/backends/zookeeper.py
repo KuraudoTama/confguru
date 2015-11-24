@@ -311,8 +311,8 @@ class ZKClient(BaseConf):
         :param dump_json_file: json file path
         :param starting_root: the start root path
         :param ensure_ascii:
-            If `ensure_ascii` is True, all non-ASCII characters in the output are
-            escaped with \uXXXX sequences, and the result is a str instance
+            If `ensure_ascii` is True, all non-ASCII characters in the output
+            are escaped with \uXXXX sequences, and the result is a str instance
             consisting of ASCII characters only.
 
             If `ensure_ascii` is False, some chunks written to `dump_json_file`
