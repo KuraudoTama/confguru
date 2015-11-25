@@ -20,7 +20,7 @@ def Guru(backend_type, *args, **kwargs):
 
     Here ``backend_type`` is a string.
 
-    Current supported backend types are 'zookeeper', 'json' and 'yml'.
+    Current supported backend types are ``zookeeper``, ``json`` and ``yml``.
     """
 
     client_class = _get_backend_class(backend_type)

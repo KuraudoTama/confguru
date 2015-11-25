@@ -12,7 +12,8 @@ class ZKClient(BaseConf):
     :param hosts: Comma-separated list of hosts to connect to
         (e.g. 127.0.0.1:2181,127.0.0.1:2182,[::1]:2183).
     :param auth_data: A list of authentication credentials to use
-        for the connection. Should be a list of (scheme, credential) tuples.
+        for the connection. Should be a list of ``(scheme, credential)``
+        tuples.
     :param timeout: The longest to wait for a Zookeeper connection
     """
 
@@ -90,16 +91,16 @@ class ZKClient(BaseConf):
         :type recursive: bool
         :returns: None
         :raises:
-            `kazoo.exceptions.BadVersionError` if version doesn't
+            ``kazoo.exceptions.BadVersionError`` if version doesn't
             match.
 
-            `kazoo.exceptions.NoNodeError` if the node doesn't
+            ``kazoo.exceptions.NoNodeError`` if the node doesn't
             exist.
 
-            `kazoo.exceptions.NotEmptyError` if the node has
+            ``kazoo.exceptions.NotEmptyError`` if the node has
             children.
 
-            `kazoo.exceptions.ZookeeperError` if the server
+            ``kazoo.exceptions.ZookeeperError`` if the server
             returns a non-zero error code.
 
         """
@@ -126,16 +127,16 @@ class ZKClient(BaseConf):
         :returns: Updated :class:`kazoo.protocol.states.ZnodeStat` of
                   the node.
         :raises:
-            `kazoo.exceptions.BadVersionError` if version doesn't
+            ``kazoo.exceptions.BadVersionError`` if version doesn't
             match.
 
-            `kazoo.exceptions.NoNodeError` if the node doesn't
+            ``kazoo.exceptions.NoNodeError`` if the node doesn't
             exist.
 
-            `kazoo.exceptions.ZookeeperError` if the provided
+            ``kazoo.exceptions.ZookeeperError`` if the provided
             value is too large.
 
-            `kazoo.exceptions.ZookeeperError` if the server
+            ``kazoo.exceptions.ZookeeperError`` if the server
             returns a non-zero error code.
 
         """
@@ -177,12 +178,12 @@ class ZKClient(BaseConf):
         """Given a scheme and credential, return an
         :class:`kazoo.security.ACL` object appropriate for use with ZKClient.
 
-        :param scheme: The scheme to use. I.e. `digest`.
+        :param scheme: The scheme to use, i.e. ``digest``.
         :param credential:
             A colon separated username, password. The password should be
-            hashed with the `scheme` specified. The
+            hashed with the ``scheme`` specified. The
             :meth:`make_digest_acl_credential` method will create and
-            return a credential appropriate for use with the `digest`
+            return a credential appropriate for use with the ``digest``
             scheme.
         :param write: Write permission.
         :type write: bool
@@ -311,15 +312,16 @@ class ZKClient(BaseConf):
         :param dump_json_file: json file path
         :param starting_root: the start root path
         :param ensure_ascii:
-            If `ensure_ascii` is True, all non-ASCII characters in the output
+            If ``ensure_ascii`` is True, all non-ASCII characters in the output
             are escaped with uXXXX sequences, and the result is a str instance
             consisting of ASCII characters only.
 
-            If `ensure_ascii` is False, some chunks written to `dump_json_file`
-            may be unicode instances. This usually happens because the input
-            contains unicode strings or the encoding parameter is used.
+            If ``ensure_ascii`` is False, some chunks written to
+            ``dump_json_file`` may be unicode instances. This usually happens
+            because the input contains unicode strings or the encoding
+            parameter is used.
         :param indent:
-            If `indent` is a non-negative integer, then JSON array elements
+            If ``indent`` is a non-negative integer, then JSON array elements
             and object members will be pretty-printed with that indent level.
 
             An indent level of 0, or negative, will only insert newlines.
